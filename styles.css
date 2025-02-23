@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #1f3c88;
+    color: #fff;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar a {
+    color: #fff;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.sidebar-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-box {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    background-color: #5893d4;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav-links, .social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-link, .social-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active, .social-link:hover {
+    color: #1f3c88;
+}
+
+.content {
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 1rem;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.section {
+    display: none ;
+}
+
+.section.active {
+    display: block;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: #1f3c88;
+}
+
+.member {
+    background-color: #d2d2d2;
+    padding:1rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 250px;
+    position: relative;
+    transition: 0.5s;
+
+    
+}
+.members-grid{
+    display: flex;
+    flex-direction: row;
+        flex-wrap: wrap;
+}
+
+
+.member img {
+    width: 200px;
+    height: 200px;
+    border-radius:15%;
+
+
+}
+
+.more-info {
+    background-color: #5893d4;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.member-links {
+    display: none;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.member-links a {
+    text-decoration: none;
+    color: black;
+    margin: 5px 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.member.active .member-links {
+    display: flex;
+}
+.member:hover{
+    box-shadow: 0px 8px 18px rgb(131, 130, 119);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #5893d4;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1f3c88;
+}
+
+.footer {
+    display: none;
+    background-color: #5893d4;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links, .social-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #5893d4;
+        padding: 1rem;
+    }
+
+    .nav-links.active, .social-links.active {
+        display: flex;
+    }
+
+    .footer {
+        display: block;
+    }
+}
